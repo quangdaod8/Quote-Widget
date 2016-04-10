@@ -1,25 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E87-b6-qkA">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Quote Widget-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="Quote Widget" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlh-Ak-Zhh">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPt-62-xQQ">
+                                <rect key="frame" x="258" y="101" width="46" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-gD-ugT" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="13h-Cg-vVV"/>
+                                    <constraint firstAttribute="width" constant="320" id="A5P-O7-DTE"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wks-jG-vsM">
+                                <rect key="frame" x="84" y="392" width="152" height="30"/>
+                                <state key="normal" title="How to enable Widget">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hkO-XS-o4Q" kind="show" id="0Mo-m2-ImF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLj-i0-7Ht">
+                                <rect key="frame" x="111" y="354" width="99" height="30"/>
+                                <state key="normal" title="Rate &amp; Review">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v3p-Ri-YmW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkB-zm-Vhj">
+                                <rect key="frame" x="124" y="316" width="72" height="30"/>
+                                <state key="normal" title="Share App">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnShareAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fc-Nb-euh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="tlh-Ak-Zhh" secondAttribute="leading" id="17z-fP-8K4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gVu-gD-ugT" secondAttribute="bottom" id="DK3-NS-BFi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xPt-62-xQQ" secondAttribute="trailing" id="G3K-wQ-v8k"/>
+                            <constraint firstItem="tlh-Ak-Zhh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Gu2-ZE-13e"/>
+                            <constraint firstItem="Wks-jG-vsM" firstAttribute="top" secondItem="JLj-i0-7Ht" secondAttribute="bottom" constant="8" id="TO4-hB-YGz"/>
+                            <constraint firstItem="gVu-gD-ugT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vd6-xv-B0e"/>
+                            <constraint firstItem="xPt-62-xQQ" firstAttribute="top" secondItem="tlh-Ak-Zhh" secondAttribute="bottom" constant="8" id="c9z-1t-Hlc"/>
+                            <constraint firstItem="JLj-i0-7Ht" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cch-yJ-c6t"/>
+                            <constraint firstItem="Wks-jG-vsM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcp-ux-1Oy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tlh-Ak-Zhh" secondAttribute="trailing" id="e4I-7S-Xoz"/>
+                            <constraint firstItem="gVu-gD-ugT" firstAttribute="top" secondItem="Wks-jG-vsM" secondAttribute="bottom" constant="8" id="gAr-fq-fDI"/>
+                            <constraint firstItem="pkB-zm-Vhj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uoi-QP-yu7"/>
+                            <constraint firstItem="JLj-i0-7Ht" firstAttribute="top" secondItem="pkB-zm-Vhj" secondAttribute="bottom" constant="8" id="yMX-Gb-rXg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fq4-vZ-0OH">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YI1-aw-Y0v"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="banner" destination="gVu-gD-ugT" id="LXd-tn-Yxe"/>
+                        <outlet property="btnShareApp" destination="pkB-zm-Vhj" id="leR-Ny-a6c"/>
+                        <outlet property="lblAuthor" destination="xPt-62-xQQ" id="fGK-lF-4sZ"/>
+                        <outlet property="lblQuote" destination="tlh-Ak-Zhh" id="QXr-aQ-wM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="228" y="292"/>
+        </scene>
+        <!--Enable Widget-->
+        <scene sceneID="GJ2-rU-IdT">
+            <objects>
+                <viewController title="Enable Widget" id="hkO-XS-o4Q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eep-Ud-wf7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sgi-ra-nYK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hAE-Kq-UJD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="8jl-hm-a3M">
+                                <rect key="frame" x="-4" y="74" width="328" height="396"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8jl-hm-a3M" secondAttribute="trailing" constant="-20" id="CUL-hi-9mh"/>
+                            <constraint firstItem="8jl-hm-a3M" firstAttribute="top" secondItem="eep-Ud-wf7" secondAttribute="bottom" constant="10" id="TCN-VD-bZH"/>
+                            <constraint firstItem="Sgi-ra-nYK" firstAttribute="top" secondItem="8jl-hm-a3M" secondAttribute="bottom" constant="10" id="gAt-BH-vbM"/>
+                            <constraint firstItem="8jl-hm-a3M" firstAttribute="leading" secondItem="hAE-Kq-UJD" secondAttribute="leadingMargin" constant="-20" id="qRQ-TC-Jq9"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yh-UE-qGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="292"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1E1-cu-kMY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E87-b6-qkA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a6g-8L-bcd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K6t-L7-GnT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="APZ-tP-MWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-182" y="292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="guide.png" width="640" height="1136"/>
+    </resources>
 </document>

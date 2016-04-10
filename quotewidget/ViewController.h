@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuoteService.h"
+#import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<GADInterstitialDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *lblQuote;
+@property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
+
+- (IBAction)btnShareAction:(id)sender;
+- (IBAction)btnRateAction:(id)sender;
+@property (weak, nonatomic) IBOutlet GADBannerView *banner;
+@property (strong, nonatomic) GADInterstitial *full;
+@property (weak, nonatomic) IBOutlet UIButton *btnShareApp;
+
+@property (strong, nonatomic) QuoteService *service;
 
 
 @end
