@@ -10,7 +10,7 @@
 #import "QuoteService.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface ViewController : UIViewController<GADInterstitialDelegate>
+@interface ViewController : UIViewController<GADInterstitialDelegate,SKProductsRequestDelegate,SKPaymentTransactionObserver>
 @property (weak, nonatomic) IBOutlet UILabel *lblQuote;
 @property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
 
@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnShareApp;
 
 @property (strong, nonatomic) QuoteService *service;
+- (IBAction)removeAdsAction:(id)sender;
 
 
 @end
